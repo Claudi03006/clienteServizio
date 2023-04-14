@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<script >$(document).ready(function(){
+		$.getJSON("api/clienti", function(data){
+			$.each(data, function(elencoUtenti, value){		
+			$("#clienti").append("<tr><td>"+value.cognome+"</td><td>"+value.nome+"</td><td>"+value.numeroTelefono+"</td><td>");	
+			});
+		});
+	});</script>
+	
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">cognome</th>
+      <th scope="col">nome</th>
+       <th scope="col">numero di telefono</th>
+      <th scope="col"></th>
+      
+    </tr>
+  </thead>
+  
+  <tbody id = "clienti">
+  </tbody>
+  </table>
+</body>
+</html>
